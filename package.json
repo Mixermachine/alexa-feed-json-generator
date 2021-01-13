@@ -1,0 +1,12 @@
+{
+  "name": "alexa-feed-json-generator",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "fastify": "^3.9.2",
+    "flow-remove-types": "^2.142.0"
+  },
+  "scripts": {
+    "start": "flow-node index"
+  }
+}
