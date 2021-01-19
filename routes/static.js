@@ -15,7 +15,7 @@ module.exports = fastify => {
                 "updateDate": "2021-01-19T21:26:01.721Z",
                 "titleText": "Jocko Willink - Embrace darkness.mp3",
                 "mainText": "",
-                "streamUrl": "http://localhost:6565/files/Jocko%20Willink%20-%20Embrace%20darkness.mp3",
+                "streamUrl": "https://alexa-feed.9d3.de/files/Jocko%20Willink%20-%20Embrace%20darkness.mp3",
                 "redirectionUrl": "https://aarondietz.de"
             },
             {
