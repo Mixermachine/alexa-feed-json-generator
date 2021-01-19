@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "fastify": "^3.9.2",
+    "fastify-static": "^3.4.0",
     "flow-remove-types": "^2.142.0"
   },
   "scripts": {
