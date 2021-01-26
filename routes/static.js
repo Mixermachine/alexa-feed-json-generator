@@ -2,8 +2,53 @@
 // @flow
 
 const {FastifyRequest, FastifyReply} = require('fastify');
+const fs = require('fs');
+const path = require("path");
+const {uuidv4} = require('uuid');
 
 const prefix = '/static';
+
+const preFolder = path.join(__dirname, '../files/pre/')
+const mainFolder = path.join(__dirname, '../files/main/')
+
+let currentState = {}
+
+function getPreForMainFile(mainFile) {
+    return path.join(preFolder, path.basename(mainFile));
+}
+
+function createObjFromNameAndPath(name, pathUrl) {
+    return {
+        uid: uuidv4,
+        updateDate: new Date(),
+        titleText: name,
+        mainText: '',
+        streamUrl: '',
+        redirectUrl: 'https://aarondietz.de'
+    }
+}
+
+function generateNewEntry() {
+    const newDate = new Date();
+    newDate.setHours(0, 0, 1);
+
+    //find new file to play
+    return fs.promises.readdir(mainFolder)
+        .then(mainFiles => {
+            const mainFile = mainFiles[Math.round(Math.round() * mainFiles.length)];
+            const preFile = getPreForMainFile(mainFile);
+            const preFileExists = fs.existsSync(preFile);
+
+
+        });
+
+
+    currentState = {
+        uid: uuidv4(),
+        updateDate: newDate,
+
+    }
+}
 
 module.exports = fastify => {
     fastify.get(prefix, {}, (request: FastifyRequest, response: FastifyReply) => {
