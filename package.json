@@ -4,9 +4,19 @@
   "private": true,
   "dependencies": {
     "fastify": "^3.9.2",
-    "flow-remove-types": "^2.142.0"
+    "fastify-multipart": "^3.3.1",
+    "flow-remove-types": "^2.142.0",
+    "node-pre-gyp": "^0.17.0",
+    "rebuild": "^0.1.2",
+    "sequelize": "^6.4.0",
+    "sqlite3": "^5.0.1",
+    "uuid": "^8.3.2"
   },
   "scripts": {
-    "start": "flow-node index"
+    "start": "flow-node index",
+    "migrate": "npx sequelize db:migrate"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
   }
 }
