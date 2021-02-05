@@ -1,4 +1,5 @@
 'use strict';
+// @flow
 
 const {uuidv4} = require('uuid');
 
@@ -8,7 +9,6 @@ const {pipeline} = require('stream');
 const pump = util.promisify(pipeline);
 
 const {FastifyRequest, FastifyReply} = require('fastify');
-const sequelize = require('../models').sequelize;
 
 const {listMissingVariablesOfObj} = require('./helper');
 

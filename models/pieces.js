@@ -17,9 +17,9 @@ module.exports = (sequelize, DataTypes) => {
     Pieces.init({
         uuid: {
             allowNull: false,
-            defaultValue: Sequelize.uuid,
+            defaultValue: sequelize.uuid,
             primaryKey: true,
-            type: Sequelize.UUID
+            type: DataTypes.UUID
         },
         filePath: DataTypes.STRING,
         title: DataTypes.STRING,

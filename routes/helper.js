@@ -1,5 +1,5 @@
 'use strict';
-
+// @flow
 
 function listMissingVariablesOfObj(myObj: {}, required: []) {
     const errorList = [];
