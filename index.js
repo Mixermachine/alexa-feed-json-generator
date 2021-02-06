@@ -3,7 +3,8 @@
 const fastify = require('fastify');
 
 const server = fastify({
-    logger: true
+    logger: true,
+    trustProxy: '172.17.0.1'
 });
 
 console.log('Registering routes');
