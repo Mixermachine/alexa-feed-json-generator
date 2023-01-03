@@ -3,17 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "fastify": "^3.9.2",
-    "fastify-multipart": "^3.3.1",
-    "flow-remove-types": "^2.142.0",
-    "sequelize": "^6.4.0",
-    "uuid": "^8.3.2"
+    "fastify": "^4.11.0",
+    "fastify-multipart": "^5.4.0",
+    "flow-remove-types": "^2.196.3",
+    "uuid": "^9.0.0"
   },
   "scripts": {
-    "start": "flow-node index",
-    "migrate": "npx sequelize db:migrate"
+    "start": "flow-node index"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.2.0"
   }
 }
