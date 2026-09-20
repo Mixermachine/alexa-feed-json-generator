@@ -1,0 +1,6 @@
+apiVersion: v2
+name: app-template
+description: Reusable starter Helm chart for 9d3.de microservices
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

@@ -1,0 +1,36 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  tag: "alpine"
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 80
+
+ingress:
+  enabled: true
+  className: "traefik"
+  clusterIssuer: "letsencrypt-prod"
+  host: "example.9d3.de"
+  path: /
+  pathType: Prefix
+  tls: true
+
+persistence:
+  enabled: false
+  mountPath: /app/data
+  size: 1Gi
+  storageClass: "local-path"
+
+resources:
+  requests:
+    cpu: 20m
+    memory: 32Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi
+
+env: []

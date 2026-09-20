@@ -1,0 +1,28 @@
+image:
+  repository: ghcr.io/mixermachine/alexa-feed-json-generator
+  tag: latest
+  pullPolicy: Always
+
+service:
+  port: 6565
+  targetPort: 6565
+
+ingress:
+  enabled: true
+  host: alexa-feed.9d3.de
+  path: /
+  tls: true
+
+persistence:
+  enabled: true
+  mountPath: /app/files
+  size: 1Gi
+  storageClass: "local-path"
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi

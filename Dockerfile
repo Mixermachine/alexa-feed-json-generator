@@ -1,10 +1,10 @@
-FROM node:15-alpine
+FROM node:24-alpine
 
 WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm install --omit=dev
 
 COPY . .
 
