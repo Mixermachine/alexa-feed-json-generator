@@ -1,34 +1,33 @@
-replicaCount: 1
-
 image:
-  repository: nginx
-  pullPolicy: IfNotPresent
-  tag: "alpine"
+  repository: ghcr.io/mixermachine/alexa-feed-json-generator
+  tag: latest
+  pullPolicy: Always
 
 service:
   type: ClusterIP
-  port: 80
-  targetPort: 80
+  port: 6565
+  targetPort: 6565
 
 ingress:
   enabled: true
   className: "traefik"
   clusterIssuer: "letsencrypt-prod"
-  host: "example.9d3.de"
+  host: "alexa-feed.9d3.de"
   path: /
   pathType: Prefix
   tls: true
 
 persistence:
-  enabled: false
-  mountPath: /app/data
+  enabled: true
+  existingClaim: alexa-feed-files
+  mountPath: /app/files
   size: 1Gi
   storageClass: "local-path"
 
 resources:
   requests:
-    cpu: 20m
-    memory: 32Mi
+    cpu: 50m
+    memory: 64Mi
   limits:
     cpu: 500m
     memory: 256Mi
