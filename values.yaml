@@ -15,6 +15,7 @@ ingress:
 
 persistence:
   enabled: true
+  existingClaim: alexa-feed-files
   mountPath: /app/files
   size: 1Gi
   storageClass: "local-path"
