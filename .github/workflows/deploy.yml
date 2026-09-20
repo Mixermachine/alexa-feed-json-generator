@@ -60,7 +60,7 @@ jobs:
 
       - name: Deploy Helm release
         run: |
-          helm upgrade --install alexa-feed ./chart \
+          helm upgrade --install alexa-feed ./helm \
             --namespace alexa-feed \
             --create-namespace \
             --values values.yaml
